@@ -2,26 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import "./components/BannerSection.css";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  /* Color schema starts */
+
+  --primary-color: #80ed99;
+  --primary-bg-color: #80ed99; 
+  --secondary-color: #57cc99;
+  --secondary-bg-color: #57cc99;
+  --tertiary-color: #38a3a5;
+  --tertiary-bg-color: #38a3a5;
+  --page-bg-color: #c7f9cc;
+
+  --white: #fff;
+
+  /* Color schema ends */
+
+  /* Font schema starts */
+
+  --font-h1: 48px;
+  --font-h2: 42px;
+  --font-h3: 35px;
+  --font-h4: 30px;
+  --font-h5: 26px;
+  --font-h6: 20px;
+  --font-p: 18px;
+
+  --responsive-font-h1: 45px;
+  --responsive-font-h2: 35px;
+  --responsive-font-h3: 32px;
+  --responsive-font-h4: 28px;
+  --responsive-font-h5: 24px;
+  --responsive-font-h6: 18px;
+
+  /* Font schema ends */
+
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  scroll-behavior: smooth;
+  background: var(--page-bg-color);
+}
+
+h1, .h1 {
+  font-size: var(--font-h1) !important;
+}
+
+h2, .h2 {
+  font-size: var(--font-h2) !important;
+}
+
+h3, .h3 {
+  font-size: var(--font-h3) !important;
+}
+
+h4, .h4 {
+  font-size: var(--font-h4) !important;
+}
+
+h5, .h5 {
+  font-size: var(--font-h5) !important;
+}
+
+h6, .h6 {
+  font-size: var(--font-h6) !important;
+}
+
+p {
+ font-size: var(--font-p) !important; 
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: auto;
+}
+
+.button {
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-weight: 700;
+  transition: 0.4s ease-in-out;
+  letter-spacing: 0.4px;
+  position: relative;
+  display: inline-block;
+}
+
+.btn1 {
+  background: var(--secondary-bg-color);
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--secondary-bg-color);
+  /* animation: buttonHover 0.4s ease-in-out; */
+}
+
+.button:after {
+  content: "";
+  border: 1px solid transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 25px;
+  transition: 0.4s ease-in-out;
+}
+
+.button:hover:after {
+  content: "";
+  border-color: var(--secondary-color);
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+}
+
+/* @keyframes buttonHover {
+  0% {
+
+  }
+} */
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1334px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media(width <= 768px) {
+  h1, .h1 {
+    font-size: var(--responsive-font-h1) !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 720px;
+  }
 }

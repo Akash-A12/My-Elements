@@ -1,0 +1,19 @@
+section.banner-section {
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    color: var(--white);
+    padding: 150px 0;
+}
+
+.banner-section .banner-button-wrapper {
+    margin-top: 50px;
+}
+
+.banner-section .banner-pre-title {
+    line-height: 24px;
+}
+
+.banner-section .banner-title {
+    margin-bottom: 25px;
+}
